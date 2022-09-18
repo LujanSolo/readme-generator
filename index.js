@@ -56,12 +56,13 @@ const questions = [
     message: 'What is your email address?',
   },
 ];
-//* must be a dynamic reaction to "none" with license, as you won't have the badge, no section on license, and no table of contents link
+//* must be a dynamic reaction to "none" with license, as there won't be a badge, no section on license, and no table of contents link (bonus?)
 
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  return fs.writeFileSync(path.join(process.cwd(), "/dist", fileName), data)
+  return fs.writeFileSync(path.join(process.cwd(), "/dist", fileName), data, (err) =>
+  err ? console.error(err) : console.log('File successfully created.'))
 };
 
 //*absolute path = path.resolve
@@ -73,7 +74,9 @@ function writeToFile(fileName, data) {
 //* access each one via the name (.then response.email, etc)
 //* then call writeToFile ; pass it generateMarkdown for the data
 //* pass generateMarkdown(inquirerResponses)
-function init() {}
+function init() {
+  
+}
 
 // Function call to initialize app
 init();
