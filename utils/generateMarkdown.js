@@ -1,9 +1,17 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+//* FUNCTION that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   switch (license) {
-    case "MIT":  //! MAYBE change this to if (true) condtional? could make "none" an empty string return, then
-      return "https://img.shields.io/badge/License-MIT-yellow.svg"
+    case "MIT":
+      return "https://img.shields.io/badge/License-MIT-yellow.svg";
+    case "Apache 2.0":
+      return "https://img.shields.io/badge/License-Apache_2.0-blue.svg";
+    case "Mozilla Public 2.0":
+      return "https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg";
+    case "BSD 3":
+      return "https://img.shields.io/badge/License-BSD_3--Clause-blue.svg";
+    case "none":
+      return "";
   }
 }
 

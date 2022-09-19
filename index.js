@@ -43,7 +43,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What type of License would you like to use?",
-    choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD3", "none"], //*make this a selectable list
+    choices: ["MIT", "Apache 2.0", "Mozilla Public 2.0", "BSD 3", "none"], //*make this a selectable list
   },
   {
     type: "input",
