@@ -29,70 +29,65 @@ function renderLicenseLink(license) {
       return "https://opensource.org/licenses/BSD-3-Clause";
     case "none":
       return "";
-
 }
 
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string //*how to get copyright year and owner name generated into this? 
+// If there is no license, return an empty string 
 function renderLicenseSection(license) {
-
+  if (license) {
   return `
     # License
-
-
-  `;
-}
+    This project is covered under the ${license}.`;
+  } else {
+    return '';
+  }
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
 
-  ## Description $(data.)
+  ${renderLicenseBadge(data)}
 
-  ## Table of Contents (Optional)
+  ## Description 
+  
+  ${data.description}
+
+  ## Table of Contents
 
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
+  - [Contribute](#contribute)
+  - [Tests](#tests)
   - [License](#license)
+  - [Questions](#questions)
 
   ## Installation
 
+  ${data.installation}
+
   ## Usage
 
-  To add a screenshot, create an `assets / images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+  ${data.usage}
 
-    ```md
-  ![alt text](assets / images / screenshot.png)
-    ```
+  ## Contribution
 
-  ## Credits
-
-  List your collaborators, if any, with links to their GitHub profiles.
-
-  If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-  If you followed tutorials, include links to those here as well.
-
-  ## License
-
-
-  ## How to Contribute
-
-  If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+  ${data.contribution}
 
   ## Tests
 
+  ${data.testing}
+
+  ## License
+
   ${renderLicenseSection(data)}
 
-  ${renderLicenseBadge(data)}
-
-  # How to Contribute
-
-  If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
   ## Questions
+
+  My GitHub profile: https://github.com/${data.gitName}
+
+  Contact me at ${data.email} for additional inquiries.
 
 `;
 }
