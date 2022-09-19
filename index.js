@@ -17,17 +17,17 @@ const questions = [
   {
     type: 'input',
     name: 'description',
-    message: 'Describe your project:',
+    message: 'Provide a short description explaining the what, why, and how of your project.',
   },
   {
     type: 'input',
     name: 'installation',
-    message: 'Describe the installation process:'
+    message: 'What are the steps required to install your project?'
   },
   {
     type: 'input',
     name: 'usage',
-    message: 'Provide any instructions on how to use your project:',
+    message: 'Provide instructions and examples for use.',
   },
   {
     type: 'input',
@@ -37,7 +37,7 @@ const questions = [
   {
     type: 'input',
     name: 'testing',
-    message: 'How can your project be tested?',
+    message: 'If you have written tests for your app, provide examples on how to run them:',
   },
   {
     type: 'list',
@@ -53,7 +53,7 @@ const questions = [
   {
     type: 'input',
     name: 'email',
-    message: 'What is your email address?',
+    message: 'What is your email address?', //*these last 2 added to QUESTIONS section of readme
   },
 ];
 //* must be a dynamic reaction to "none" with license, as there won't be a badge, no section on license, and no table of contents link (bonus?)
@@ -75,7 +75,21 @@ function writeToFile(fileName, data) {
 //* then call writeToFile ; pass it generateMarkdown for the data
 //* pass generateMarkdown(inquirerResponses)
 function init() {
-  
+
+inquirer
+.prompt(questions)
+.then((answers) => {
+  console.log(answers);
+})
+.catch((error) => {
+  if (error.isTtyError) {
+    // Prompt couldn't be rendered in the current environment
+    console.log('An error occurred.');
+  } else {
+    // Something else went wrong
+    console.log('An error occurred.');
+  }
+});
 }
 
 // Function call to initialize app
