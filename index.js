@@ -1,11 +1,10 @@
-// TODO: Include packages needed for this application
-const generateMarkdown = require("./utils/generateMarkdown.js");
+//* Packages needed for this application
 const fs = require("fs");
-const path = require("path");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown.js");
+// const path = require("path");
 
-//*making 2 types of inquirer prompts
-// TODO: Create an array of questions for user input
+//* An array of questions for user input
 const questions = [
   {
     type: "input",
@@ -15,8 +14,7 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message:
-      "Provide a short description explaining the what, why, and how of your project.",
+    message: "Provide a short description explaining the what, why, and how of your project.",
   },
   {
     type: "input",
@@ -43,7 +41,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What type of License would you like to use?",
-    choices: ["MIT", "Apache 2.0", "Mozilla Public 2.0", "BSD 3", "none"], //*make this a selectable list
+    choices: ["MIT", "Apache 2.0", "Mozilla Public 2.0", "BSD 3", "none"],
   },
   {
     type: "input",
@@ -53,26 +51,24 @@ const questions = [
   {
     type: "input",
     name: "email",
-    message: "What is your email address?", //*these last 2 added to QUESTIONS section of readme
+    message: "What is your email address?",
   },
 ];
 //* must be a dynamic reaction to "none" with license, as there won't be a badge, no section on license, and no table of contents link (bonus?)
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//   fs.writeFile(fileName, data, (err) =>
-//   (err) ? console.log("error") : console.log('READme successfully generated.'))
-// }
 function writeToFile(fileName, data) {
-  return fs.writeFileSync(
-    path.join(process.cwd(), "/dist", fileName),
-    data,
-    (err) =>
-      err ? console.error(err) : console.log("File successfully created.")
-  );
+  fs.writeFile(fileName, data, (err) =>
+    (err) ? console.log("error") : console.log('READme successfully generated.'))
 }
-
-
+// function writeToFile(fileName, data) {
+//   return fs.writeFileSync(
+//     path.join(process.cwd(), "/dist", fileName),
+//     data,
+//     (err) =>
+//       err ? console.error(err) : console.log("File successfully created.")
+//   );
+// }
 
 //* FUNCTION to initialize app
 function init() {
@@ -80,17 +76,17 @@ function init() {
     .prompt(questions)
     .then((answers) => {
       const markdownOutput = generateMarkdown(answers);
-      writeToFile('README.md', markdownOutput)
+      writeToFile("README.md", markdownOutput)
     })
-    .catch((error) => {
-      if (error.isTtyError) {
-        // Prompt couldn't be rendered in the current environment
-        console.log('An error occurred.');
-      } else {
-        // Something else went wrong
-        console.log('An error occurred.');
-      }
-    });
+  // .catch((error) => {
+  //   if (error.isTtyError) {
+  //     // Prompt couldn't be rendered in the current environment
+  //     console.log('An error occurred.');
+  //   } else {
+  //     // Something else went wrong
+  //     console.log('An error occurred.');
+  //   }
+  // });
 }
 
 // Function call to initialize app
