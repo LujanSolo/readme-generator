@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
@@ -59,6 +59,10 @@ const questions = [
 //* must be a dynamic reaction to "none" with license, as there won't be a badge, no section on license, and no table of contents link (bonus?)
 
 // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+//   fs.writeFile(fileName, data, (err) =>
+//   (err) ? console.log("error") : console.log('READme successfully generated.'))
+// }
 function writeToFile(fileName, data) {
   return fs.writeFileSync(
     path.join(process.cwd(), "/dist", fileName),
