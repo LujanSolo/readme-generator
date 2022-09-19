@@ -33,21 +33,21 @@ function renderLicenseLink(license) {
     case "none":
       return "";
   }
+}
 
-  //* FUNCTION that returns the license section of README
-  //*   (If there is no license, return an empty string) 
-  function renderLicenseSection(license) {
-    if (license !== '' || license !== null) {
-      return `
-  This project is covered under the ${license}.`
-    } else {
-      return "";
-    }
+//* FUNCTION that returns the license section of README
+//*   (If there is no license, return an empty string) 
+function renderLicenseSection(license) {
+  if (license !== '' || license !== null) {
+    return `This project is covered under the ${license}.`
+  } else {
+    return "";
   }
+}
 
-  //* FUNCTION to generate markdown for README
-  function generateMarkdown(data) {
-    return `
+//* FUNCTION to generate markdown for README
+function generateMarkdown(data) {
+  return `
 # ${data.title}
 
 ${renderLicenseBadge(data.license)}
@@ -91,7 +91,7 @@ My GitHub profile: [https://github.com/${data.gitName}]
 
 Contact me at [${data.email}] for additional inquiries.
 `
-  }
 }
+
 
 module.exports = generateMarkdown;
