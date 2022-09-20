@@ -20,6 +20,7 @@ function renderLicenseBadge(license) {
 
 //* FUNCTION that returns the license link
 //*   (If there is no license, return an empty string)
+//! note: below is an alternate way to write the if/return conditionals seen above
 function renderLicenseLink(license) {
   switch (license) {
     case "MIT":
@@ -38,8 +39,8 @@ function renderLicenseLink(license) {
 //* FUNCTION that returns the license section of README
 //*   (If there is no license, return an empty string) 
 function renderLicenseSection(license) {
-  if (license !== '' || license !== null) {
-    return `This project is covered under the ${license}.`
+  if (license !== null) {
+    return `This project is covered under the ${license} License.`
   } else {
     return "";
   }
@@ -92,6 +93,5 @@ My GitHub profile: [https://github.com/${data.gitName}]
 Contact me at [${data.email}] for additional inquiries.
 `
 }
-
 
 module.exports = generateMarkdown;

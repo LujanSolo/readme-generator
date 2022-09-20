@@ -56,7 +56,7 @@ const questions = [
 ];
 //* must be a dynamic reaction to "none" with license, as there won't be a badge, no section on license, and no table of contents link (bonus?)
 
-// TODO: Create a function to write README file
+//* FUNCTION to write README file
 // function writeToFile(fileName, data) {
 //   fs.writeFile(fileName, data, (err) =>
 //     (err) ? console.log("error") : console.log('READme successfully generated.'))
