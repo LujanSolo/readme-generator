@@ -1,6 +1,8 @@
 
 # The READme GENERATOR
 
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+
 https://img.shields.io/badge/License-Apache_2.0-blue.svg
 
 ## Description

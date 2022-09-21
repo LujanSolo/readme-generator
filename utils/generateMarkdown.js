@@ -2,16 +2,16 @@
 //*   (If there is no license, return an empty string)
 function renderLicenseBadge(license) {
   if (license === "MIT") {
-    return "https://img.shields.io/badge/License-MIT-yellow.svg"
+    return "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)"
   }
   if (license === "Apache 2.0") {
-    return "https://img.shields.io/badge/License-Apache_2.0-blue.svg"
+    return "![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)"
   }
   if (license === "Mozilla Public 2.0") {
-    return "https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg"
+    return "![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)"
   }
   if (license === "BSD 3") {
-    return "https://img.shields.io/badge/License-BSD_3--Clause-blue.svg"
+    return "![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)"
   }
   if (license === "none") {
     return "";
@@ -24,7 +24,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch (license) {
     case "MIT":
-      return "https://opensource.org/licenses/MIT";
+      return "https://opensource.org/licenses/MIT"; //todo - May need to add a break; here
     case "Apache 2.0":
       return "https://opensource.org/licenses/Apache-2.0";
     case "Mozilla Public 2.0":
@@ -40,7 +40,9 @@ function renderLicenseLink(license) {
 //*   (If there is no license, return an empty string) 
 function renderLicenseSection(license) {
   if (license !== null) {
-    return `This project is covered under the ${license} License.`
+    return `
+This project is covered under the [${license} License](${renderLicenseLink(license)}).
+`
   } else {
     return "";
   }
