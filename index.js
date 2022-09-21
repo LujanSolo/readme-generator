@@ -2,7 +2,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
-// const path = require("path");
 
 //* An array of questions for user input
 const questions = [
@@ -54,19 +53,12 @@ const questions = [
     message: "What is your email address?",
   },
 ];
-//* must be a dynamic reaction to "none" with license, as there won't be a badge, no section on license, and no table of contents link (bonus?)
 
 //* FUNCTION to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
     (err) ? console.log("error") : console.log('READme successfully generated.'))
 }
-// function writeToFile(fileName, data) {
-//   return fs.writeFileSync(
-//     path.join(process.cwd(), "/dist", fileName), data, (err) =>
-//       (err) ? console.error(err) : console.log("File successfully created.")
-//   );
-// }
 
 //* FUNCTION to initialize app
 function init() {
@@ -87,5 +79,4 @@ function init() {
     });
 }
 
-// Function call to initialize app
 init();

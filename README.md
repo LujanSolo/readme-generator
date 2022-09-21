@@ -22,7 +22,7 @@ asdf
 
 ## Usage
 
-sadf
+asdf
 
 ## Contribution
 
@@ -40,6 +40,6 @@ This project is covered under the [MIT License](https://opensource.org/licenses/
 
 ## Questions
 
-My GitHub profile: [https://github.com/asdf]
+My GitHub profile: [https://github.com/sf]
 
-Contact me at [asdf] for additional inquiries.
+Contact me at [ssf] for additional inquiries.

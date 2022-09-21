@@ -36,8 +36,7 @@ function renderLicenseLink(license) {
   }
 }
 
-//* FUNCTION that returns the license section of README
-//*   (If there is no license, return an empty string) 
+//* FUNCTION that returns the license section of README (If there is no license, return an empty string) 
 function renderLicenseSection(license) {
   if (license !== null) {
     return `
@@ -90,7 +89,7 @@ ${renderLicenseSection(data.license)}
 
 ## Questions
 
-My GitHub profile: [https://github.com/${data.gitName}]
+GitHub profile: [https://github.com/${data.gitName}]
 
 Contact me at [${data.email}] for additional inquiries.
 `
