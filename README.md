@@ -26,7 +26,10 @@ To install, download the necessary files from the gitHub repository, which can b
 
 ## Usage
 
-To use, be sure to have node.js and this app’s files downloaded to your system. In your CLI (terminal, gitbash), type ’node index.js’ and then, follow along and answer the questions in your command line interface. Once the questions have all been answered, your new READme document will generate and appear in the /dist directory!
+To use, be sure to have node.js and this app’s files downloaded to your system. In your CLI (e.g. terminal, gitbash), type ’node index.js’ and then, follow along and answer the questions in your command line interface. Once the questions have all been answered, your new READme document will generate and appear in the /dist directory! The image below shows a Command Line Interface with the prompted questions that you must answer:
+
+![screenshot of CLI](./images/readme-gen-img.png)
+
 
 ## Contribution
 
