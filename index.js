@@ -2,6 +2,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
+const path = require("path");
 
 //* An array of questions for user input
 const questions = [
@@ -55,9 +56,16 @@ const questions = [
 ];
 
 //* FUNCTION to write README file
+// function writeToFile(fileName, data) {
+//   fs.writeFile(fileName, data, (err) =>
+//     (err) ? console.log("error") : console.log('READme successfully generated.'))
+// }
+
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) =>
-    (err) ? console.log("error") : console.log('READme successfully generated.'))
+  return fs.writeFileSync(
+    path.join(process.cwd(), "/dist", fileName), data, (err) =>
+      (err) ? console.error(err) : console.log("File successfully created.")
+  );
 }
 
 //* FUNCTION to initialize app
