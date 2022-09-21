@@ -89,7 +89,7 @@ ${renderLicenseSection(data.license)}
 
 ## Questions
 
-GitHub profile: https://github.com/${data.gitName}
+GitHub profile: ${data.gitName}
 
 Contact me at ${data.email} for additional inquiries.
 `
